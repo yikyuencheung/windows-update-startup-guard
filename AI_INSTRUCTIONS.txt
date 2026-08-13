@@ -1,4 +1,4 @@
-WINDOWS UPDATE STARTUP GUARD — AI 操作入口
+DISABLE WINDOWS AUTOMATIC UPDATES — AI 操作入口
 
 本包包含一個標準 Skill：
 windows-update-startup-guard\SKILL.md
@@ -29,4 +29,3 @@ windows-update-startup-guard\SKILL.md
 - 不得宣稱能「永久」阻止所有 Windows 更新。
 
 如要把本 Skill 安裝到 Codex 的 Skills 目錄，只執行同層的 install_skill.ps1。該腳本只安裝 Skill 本身，不會修改 Windows Update。
-
