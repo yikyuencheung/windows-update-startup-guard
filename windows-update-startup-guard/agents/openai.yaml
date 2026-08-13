@@ -1,4 +1,4 @@
 interface:
-  display_name: "Windows Update Startup Guard"
-  short_description: "Install and verify a boot-only Windows Update guard"
+  display_name: "Disable Windows Automatic Updates"
+  short_description: "Disable Windows 11 automatic updates at boot"
   default_prompt: "Use $windows-update-startup-guard to install or audit the boot-only Windows Update guard safely."
