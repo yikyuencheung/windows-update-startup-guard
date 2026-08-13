@@ -1,8 +1,10 @@
-# Windows Update Startup Guard
+# Disable Windows Automatic Updates
 
-一個供 Codex 及其他 AI 工具使用的 Windows 11 Skill。它會在使用者明確同意後，建立一個只在開機時執行一次的 `SYSTEM` 排程工作，重新套用 Windows Update 原則與服務設定，降低自動更新及更新後強制重新啟動的機會。
+一個用來停用 Windows 11 自動更新及更新後自動重新啟動的可攜式 Skill，適用於 Codex 和其他能讀取本機檔案、執行 PowerShell 的 AI 工具。
 
-本專案不會建立每 5 分鐘執行的守護工作，不會設定無效 WSUS、修改 hosts 或防火牆，也不會刪除 Windows 更新元件。
+取得使用者明確同意後，它會停用 Windows Update 的自動更新服務與相關原則，並建立一個只在開機時執行一次的 `SYSTEM` 排程工作，讓設定在每次開機時重新生效。
+
+本專案的目標是直接停用自動更新，同時保留可審計、可驗證及可完整還原的安全邊界。它不會建立每 5 分鐘執行的守護工作，不會設定無效 WSUS、修改 hosts 或防火牆，也不會刪除 Windows 更新元件。
 
 ## 重要限制
 
