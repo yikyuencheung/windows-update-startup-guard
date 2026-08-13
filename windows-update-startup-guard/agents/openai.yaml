@@ -1,0 +1,4 @@
+interface:
+  display_name: "Windows Update Startup Guard"
+  short_description: "Install and verify a boot-only Windows Update guard"
+  default_prompt: "Use $windows-update-startup-guard to install or audit the boot-only Windows Update guard safely."
