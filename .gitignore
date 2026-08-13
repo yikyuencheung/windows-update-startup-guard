@@ -1,0 +1,10 @@
+# Runtime results generated on the target machine
+windows-update-startup-guard/scripts/install_verification.json
+windows-update-startup-guard/scripts/restore_result.json
+
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
