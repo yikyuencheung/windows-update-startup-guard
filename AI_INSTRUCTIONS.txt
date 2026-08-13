@@ -1,0 +1,32 @@
+WINDOWS UPDATE STARTUP GUARD — AI 操作入口
+
+本包包含一個標準 Skill：
+windows-update-startup-guard\SKILL.md
+
+給 AI 工具的必要流程：
+
+1. 完整讀取 windows-update-startup-guard\SKILL.md。
+2. 在安裝前執行唯讀審計：
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\windows-update-startup-guard\scripts\audit.ps1
+3. 明確告知使用者：停用 Windows 自動更新會降低安全性，並可能影響 Microsoft Store、自動驅動程式和部分 Defender 更新來源。
+4. 未取得使用者明確同意前，不得執行系統安裝。
+5. 先做無變更驗證：
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\windows-update-startup-guard\scripts\install.ps1 -ValidateOnly
+6. 使用者同意後才安裝：
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\windows-update-startup-guard\scripts\install.ps1
+   安裝程式會自行要求 UAC，建立且只建立一個開機觸發的 SYSTEM 排程工作。
+7. 安裝後驗證：
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\windows-update-startup-guard\scripts\verify.ps1
+8. 還原時執行：
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\windows-update-startup-guard\scripts\restore.ps1
+
+禁止事項：
+
+- 不得建立每 5 分鐘或其他週期性守護工作。
+- 不得設定空白 WSUS、hosts 或防火牆網路封鎖。
+- 不得刪除 Windows 更新元件或取得 WaaSMedicSvc 所有權。
+- 不得停用 Microsoft Defender、BITS、Delivery Optimization 或 Microsoft Store 服務。
+- 不得宣稱能「永久」阻止所有 Windows 更新。
+
+如要把本 Skill 安裝到 Codex 的 Skills 目錄，只執行同層的 install_skill.ps1。該腳本只安裝 Skill 本身，不會修改 Windows Update。
+
