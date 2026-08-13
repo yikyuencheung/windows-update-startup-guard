@@ -3,7 +3,7 @@ name: windows-update-startup-guard
 description: Install, audit, verify, or remove a conservative Windows 11 startup-only guard that disables automatic Windows Update at boot. Use when a user explicitly asks to stop Windows automatic updates or forced update restarts, requests a portable Windows Update blocking package, or needs to restore a guard previously installed by this skill. Do not use for ordinary update troubleshooting, one-time update pauses, Windows Server, or without explicit approval of the security and Microsoft Store side effects.
 ---
 
-# Windows Update Startup Guard
+# Disable Windows Automatic Updates
 
 Use the bundled PowerShell scripts. Do not reconstruct registry commands ad hoc.
 
@@ -75,4 +75,3 @@ Then run `audit.ps1` and report restored policy and service states. The restorer
 - `scripts/enforce.ps1`: task payload copied to protected ProgramData and run at startup.
 - `scripts/verify.ps1`: read-only compliance check with a machine-readable JSON result.
 - `scripts/restore.ps1`: remove the task and restore captured policy and service state.
-
